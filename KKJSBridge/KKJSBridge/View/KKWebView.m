@@ -106,6 +106,15 @@
     }
 }
 
+-(void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation
+{
+    id<WKNavigationDelegate> mainDelegate = self.realNavigationDelegate;
+    if ([mainDelegate respondsToSelector:@selector(webView:didStartProvisionalNavigation:)]) {
+        [mainDelegate webView:webView didStartProvisionalNavigation:navigation];
+    }
+}
+
+
 // 3、页面跳转完成时调用
 - (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation {
     id<WKNavigationDelegate> mainDelegate = self.realNavigationDelegate;
