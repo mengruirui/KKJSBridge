@@ -20,7 +20,7 @@
     if (availableCookie.count > 0) {
         NSDictionary *reqHeader = [NSHTTPCookie requestHeaderFieldsWithCookies:availableCookie];
         NSString *cookieStr = [reqHeader objectForKey:@"Cookie"];
-        [request setValue:cookieStr forHTTPHeaderField:@"Cookie"];
+//        [request setValue:cookieStr forHTTPHeaderField:@"Cookie"];
     }
 }
 
